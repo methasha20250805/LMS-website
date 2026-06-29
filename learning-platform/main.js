@@ -243,43 +243,122 @@ let allCourses = [];
  * Initialises the All Courses page.
  * Loads XML, renders cards, sets up search and filter controls.
  */
+let currentPage = 1;
+const COURSES_PER_PAGE = 6;
+
 function initAllCoursesPage() {
     const grid = qs('#all-courses-grid');
     if (!grid) return;
 
-    const searchInput  = qs('#course-search');
-    const levelFilter  = qs('#level-filter');
-    const catFilter    = qs('#category-filter');
+    const searchInput = qs('#course-search');
+    const levelFilter = qs('#level-filter');
+    const catFilter   = qs('#category-filter');
 
     loadCoursesXML()
         .then(function (xml) {
             const courseEls = xml.querySelectorAll('course');
             allCourses = Array.from(courseEls).map(parseCourseElement);
-            renderCourseGrid(allCourses, grid);
+            renderPage(grid, searchInput, levelFilter, catFilter);
 
-            // Attach filter/search event listeners
             if (searchInput) {
                 searchInput.addEventListener('input', function () {
-                    applyFilters(grid, searchInput, levelFilter, catFilter);
+                    currentPage = 1;
+                    renderPage(grid, searchInput, levelFilter, catFilter);
                 });
             }
-
             if (levelFilter) {
                 levelFilter.addEventListener('change', function () {
-                    applyFilters(grid, searchInput, levelFilter, catFilter);
+                    currentPage = 1;
+                    renderPage(grid, searchInput, levelFilter, catFilter);
                 });
             }
-
             if (catFilter) {
                 catFilter.addEventListener('change', function () {
-                    applyFilters(grid, searchInput, levelFilter, catFilter);
+                    currentPage = 1;
+                    renderPage(grid, searchInput, levelFilter, catFilter);
                 });
             }
         })
         .catch(function (err) {
             console.error('Could not load courses:', err);
-            grid.innerHTML = '<p class="text-muted text-center" style="padding:60px">Unable to load courses. Please try again later.</p>';
+            grid.innerHTML = '<p class="text-muted text-center" style="padding:60px">Unable to load courses.</p>';
         });
+}
+
+function getFilteredCourses(searchInput, levelFilter, catFilter) {
+    const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const levelVal   = levelFilter ? levelFilter.value : 'all';
+    const catVal     = catFilter   ? catFilter.value   : 'all';
+
+    return allCourses.filter(function (course) {
+        const matchesSearch = !searchTerm
+            || course.title.toLowerCase().includes(searchTerm)
+            || course.description.toLowerCase().includes(searchTerm)
+            || course.instructor.toLowerCase().includes(searchTerm)
+            || course.code.toLowerCase().includes(searchTerm);
+        const matchesLevel    = levelVal === 'all' || course.level.toLowerCase() === levelVal.toLowerCase();
+        const matchesCategory = catVal === 'all'   || course.category.toLowerCase() === catVal.toLowerCase();
+        return matchesSearch && matchesLevel && matchesCategory;
+    });
+}
+
+function renderPage(grid, searchInput, levelFilter, catFilter) {
+    const filtered   = getFilteredCourses(searchInput, levelFilter, catFilter);
+    const totalPages = Math.ceil(filtered.length / COURSES_PER_PAGE);
+    const start      = (currentPage - 1) * COURSES_PER_PAGE;
+    const pageItems  = filtered.slice(start, start + COURSES_PER_PAGE);
+
+    renderCourseGrid(pageItems, grid);
+    renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+    const nav = qs('.pagination');
+    if (!nav) return;
+
+    nav.innerHTML = '';
+
+    // Previous button
+    const prev = document.createElement('button');
+    prev.className = 'pagination__btn';
+    prev.textContent = '‹';
+    prev.setAttribute('aria-label', 'Previous page');
+    prev.disabled = currentPage === 1;
+    prev.addEventListener('click', function () {
+        if (currentPage > 1) { currentPage--; scrollToGrid(); renderPage(qs('#all-courses-grid'), qs('#course-search'), qs('#level-filter'), qs('#category-filter')); }
+    });
+    nav.appendChild(prev);
+
+    // Page number buttons
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'pagination__btn' + (i === currentPage ? ' active' : '');
+        btn.textContent = i;
+        btn.setAttribute('aria-label', 'Page ' + i);
+        if (i === currentPage) btn.setAttribute('aria-current', 'page');
+        btn.addEventListener('click', function () {
+            currentPage = i;
+            scrollToGrid();
+            renderPage(qs('#all-courses-grid'), qs('#course-search'), qs('#level-filter'), qs('#category-filter'));
+        });
+        nav.appendChild(btn);
+    }
+
+    // Next button
+    const next = document.createElement('button');
+    next.className = 'pagination__btn';
+    next.textContent = '›';
+    next.setAttribute('aria-label', 'Next page');
+    next.disabled = currentPage === totalPages || totalPages === 0;
+    next.addEventListener('click', function () {
+        if (currentPage < totalPages) { currentPage++; scrollToGrid(); renderPage(qs('#all-courses-grid'), qs('#course-search'), qs('#level-filter'), qs('#category-filter')); }
+    });
+    nav.appendChild(next);
+}
+
+function scrollToGrid() {
+    const grid = qs('#all-courses-grid');
+    if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /**

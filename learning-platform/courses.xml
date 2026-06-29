@@ -183,5 +183,284 @@
             <objective>Communicate effectively within project teams</objective>
         </objectives>
     </course>
+    <course id="C007" category="Technology" level="Intermediate">
+    <title>Python for Data Analysis</title>
+    <code>DA201</code>
+    <description>Master data analysis using Python with libraries like Pandas, NumPy, and Matplotlib. Learn to clean, transform, and visualize datasets to extract meaningful insights for real-world problems.</description>
+    <duration>12 Hours</duration>
+    <instructor>Prof. James Okafor</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">Python Refresher and Environment Setup</lesson>
+        <lesson number="02">Introduction to NumPy Arrays</lesson>
+        <lesson number="03">Data Manipulation with Pandas</lesson>
+        <lesson number="04">Cleaning and Handling Missing Data</lesson>
+        <lesson number="05">Exploratory Data Analysis (EDA)</lesson>
+        <lesson number="06">Data Visualization with Matplotlib</lesson>
+        <lesson number="07">Advanced Plotting with Seaborn</lesson>
+        <lesson number="08">Working with Real-World Datasets</lesson>
+        <lesson number="09">Statistical Analysis Basics</lesson>
+        <lesson number="10">Capstone: Analyzing a Public Dataset</lesson>
+    </lessons>
+    <objectives>
+        <objective>Use Pandas to load, clean, and transform datasets</objective>
+        <objective>Perform descriptive statistical analysis on data</objective>
+        <objective>Create informative charts and visualizations</objective>
+        <objective>Apply data analysis to a real-world scenario</objective>
+    </objectives>
+</course>
+
+<course id="C008" category="Design" level="Foundation">
+    <title>UI/UX Design Fundamentals</title>
+    <code>UX101</code>
+    <description>Explore the principles of user interface and user experience design. Learn how to create intuitive, accessible, and visually appealing digital products using industry-standard tools and methodologies.</description>
+    <duration>10 Hours</duration>
+    <instructor>Ms. Priya Nair</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">Introduction to UX Design Thinking</lesson>
+        <lesson number="02">Understanding Users and Research Methods</lesson>
+        <lesson number="03">Information Architecture and User Flows</lesson>
+        <lesson number="04">Wireframing Techniques</lesson>
+        <lesson number="05">Typography and Color Theory</lesson>
+        <lesson number="06">UI Design Principles and Patterns</lesson>
+        <lesson number="07">Prototyping with Figma</lesson>
+        <lesson number="08">Usability Testing Basics</lesson>
+        <lesson number="09">Accessibility in Design</lesson>
+        <lesson number="10">Final Project: Design a Mobile App Screen</lesson>
+    </lessons>
+    <objectives>
+        <objective>Apply user-centered design principles to real problems</objective>
+        <objective>Create wireframes and interactive prototypes</objective>
+        <objective>Conduct basic usability tests and gather feedback</objective>
+        <objective>Design accessible and inclusive interfaces</objective>
+    </objectives>
+</course>
+
+<course id="C009" category="Business" level="Foundation">
+    <title>Digital Marketing Essentials</title>
+    <code>DM101</code>
+    <description>Gain a comprehensive understanding of digital marketing channels including SEO, social media, email marketing, and paid advertising. Build skills to grow an online presence and drive measurable results.</description>
+    <duration>9 Hours</duration>
+    <instructor>Dr. Lisa Fernandez</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">Introduction to Digital Marketing</lesson>
+        <lesson number="02">Building a Marketing Strategy</lesson>
+        <lesson number="03">Search Engine Optimization (SEO) Basics</lesson>
+        <lesson number="04">Content Marketing and Blogging</lesson>
+        <lesson number="05">Social Media Marketing</lesson>
+        <lesson number="06">Email Marketing Campaigns</lesson>
+        <lesson number="07">Pay-Per-Click Advertising (PPC)</lesson>
+        <lesson number="08">Analytics and Measuring Performance</lesson>
+        <lesson number="09">Conversion Rate Optimization</lesson>
+        <lesson number="10">Final Project: Create a Marketing Plan</lesson>
+    </lessons>
+    <objectives>
+        <objective>Understand the core digital marketing channels and their roles</objective>
+        <objective>Implement basic SEO practices for a website</objective>
+        <objective>Plan and execute a social media campaign</objective>
+        <objective>Measure campaign performance using analytics tools</objective>
+    </objectives>
+</course>
+
+<course id="C010" category="Technology" level="Advanced">
+    <title>Machine Learning with Python</title>
+    <code>ML301</code>
+    <description>Dive deep into supervised and unsupervised machine learning algorithms. Learn to build, evaluate, and deploy predictive models using scikit-learn, and understand the mathematics driving modern ML systems.</description>
+    <duration>16 Hours</duration>
+    <instructor>Dr. Arun Krishnamurthy</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">Machine Learning Overview and Types</lesson>
+        <lesson number="02">Data Preprocessing and Feature Engineering</lesson>
+        <lesson number="03">Linear and Logistic Regression</lesson>
+        <lesson number="04">Decision Trees and Random Forests</lesson>
+        <lesson number="05">Support Vector Machines</lesson>
+        <lesson number="06">Unsupervised Learning: Clustering</lesson>
+        <lesson number="07">Model Evaluation and Cross-Validation</lesson>
+        <lesson number="08">Hyperparameter Tuning</lesson>
+        <lesson number="09">Introduction to Neural Networks</lesson>
+        <lesson number="10">Capstone: Build and Deploy a Predictive Model</lesson>
+    </lessons>
+    <objectives>
+        <objective>Implement supervised and unsupervised learning algorithms</objective>
+        <objective>Preprocess data and engineer meaningful features</objective>
+        <objective>Evaluate models using appropriate metrics</objective>
+        <objective>Deploy a trained model for real-world use</objective>
+    </objectives>
+</course>
+
+<course id="C011" category="Personal Development" level="Foundation">
+    <title>Public Speaking and Presentation Skills</title>
+    <code>PS101</code>
+    <description>Overcome the fear of public speaking and develop confidence in delivering compelling presentations. This course covers storytelling, vocal delivery, body language, and slide design for professional and academic settings.</description>
+    <duration>6 Hours</duration>
+    <instructor>Ms. Claire Beaumont</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">Understanding and Overcoming Speaking Anxiety</lesson>
+        <lesson number="02">Structuring a Compelling Speech</lesson>
+        <lesson number="03">Storytelling Techniques</lesson>
+        <lesson number="04">Voice, Tone, and Pace</lesson>
+        <lesson number="05">Body Language and Stage Presence</lesson>
+        <lesson number="06">Designing Effective Slides</lesson>
+        <lesson number="07">Handling Q&amp;A Sessions</lesson>
+        <lesson number="08">Presenting Data Clearly</lesson>
+        <lesson number="09">Virtual and Online Presentations</lesson>
+        <lesson number="10">Final Project: Deliver a 5-Minute Presentation</lesson>
+    </lessons>
+    <objectives>
+        <objective>Structure and deliver a clear, engaging speech</objective>
+        <objective>Use storytelling to connect with an audience</objective>
+        <objective>Apply effective body language and vocal techniques</objective>
+        <objective>Design slides that support rather than distract</objective>
+    </objectives>
+</course>
+
+<course id="C012" category="Technology" level="Intermediate">
+    <title>Cloud Computing with AWS</title>
+    <code>CC201</code>
+    <description>Learn to architect, deploy, and manage cloud infrastructure using Amazon Web Services. Covering core services like EC2, S3, RDS, and IAM, this course prepares you for real-world cloud roles and AWS certification exams.</description>
+    <duration>14 Hours</duration>
+    <instructor>Mr. David Thornton</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">Introduction to Cloud Computing Concepts</lesson>
+        <lesson number="02">AWS Global Infrastructure</lesson>
+        <lesson number="03">Compute Services: EC2 and Lambda</lesson>
+        <lesson number="04">Storage Services: S3 and EBS</lesson>
+        <lesson number="05">Databases in the Cloud: RDS and DynamoDB</lesson>
+        <lesson number="06">Networking: VPC, Subnets, and Security Groups</lesson>
+        <lesson number="07">Identity and Access Management (IAM)</lesson>
+        <lesson number="08">Monitoring with CloudWatch</lesson>
+        <lesson number="09">Cost Management and Optimization</lesson>
+        <lesson number="10">Capstone: Deploy a Three-Tier Web Application</lesson>
+    </lessons>
+    <objectives>
+        <objective>Navigate and configure core AWS services</objective>
+        <objective>Design a secure and scalable cloud architecture</objective>
+        <objective>Manage access using IAM policies and roles</objective>
+        <objective>Monitor cloud resources and control costs</objective>
+    </objectives>
+</course>
+
+<course id="C013" category="Finance" level="Foundation">
+    <title>Personal Finance and Investing Basics</title>
+    <code>FN101</code>
+    <description>Take control of your financial future by learning budgeting, debt management, savings strategies, and the fundamentals of investing in stocks, bonds, and index funds. Designed for anyone starting their financial journey.</description>
+    <duration>7 Hours</duration>
+    <instructor>Mr. Robert Chambers</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">Understanding Your Financial Health</lesson>
+        <lesson number="02">Budgeting Methods and Tools</lesson>
+        <lesson number="03">Emergency Funds and Saving Goals</lesson>
+        <lesson number="04">Understanding and Managing Debt</lesson>
+        <lesson number="05">Introduction to the Stock Market</lesson>
+        <lesson number="06">Bonds, ETFs, and Index Funds</lesson>
+        <lesson number="07">Tax-Advantaged Accounts and Retirement Planning</lesson>
+        <lesson number="08">Risk Tolerance and Asset Allocation</lesson>
+        <lesson number="09">Avoiding Common Financial Mistakes</lesson>
+        <lesson number="10">Final Project: Build Your Personal Financial Plan</lesson>
+    </lessons>
+    <objectives>
+        <objective>Create and maintain a personal budget</objective>
+        <objective>Understand and reduce personal debt strategically</objective>
+        <objective>Differentiate between investment vehicles and their risks</objective>
+        <objective>Build a basic long-term financial plan</objective>
+    </objectives>
+</course>
+
+<course id="C014" category="Technology" level="Foundation">
+    <title>Introduction to Cybersecurity</title>
+    <code>CS101</code>
+    <description>Understand the fundamentals of cybersecurity, including common threats, attack vectors, and defense strategies. Ideal for beginners seeking to protect personal data or pursue a career in information security.</description>
+    <duration>8 Hours</duration>
+    <instructor>Dr. Yemi Adeyemi</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">The Cybersecurity Landscape</lesson>
+        <lesson number="02">Types of Cyber Threats and Attacks</lesson>
+        <lesson number="03">Social Engineering and Phishing</lesson>
+        <lesson number="04">Network Security Fundamentals</lesson>
+        <lesson number="05">Password Security and Authentication</lesson>
+        <lesson number="06">Encryption and Data Protection</lesson>
+        <lesson number="07">Firewalls and Intrusion Detection Systems</lesson>
+        <lesson number="08">Security Best Practices for Organizations</lesson>
+        <lesson number="09">Incident Response Basics</lesson>
+        <lesson number="10">Final Project: Security Audit of a Sample System</lesson>
+    </lessons>
+    <objectives>
+        <objective>Identify common cybersecurity threats and vulnerabilities</objective>
+        <objective>Apply basic network and data security practices</objective>
+        <objective>Understand encryption and authentication mechanisms</objective>
+        <objective>Outline a simple incident response plan</objective>
+    </objectives>
+</course>
+
+<course id="C015" category="Creative Arts" level="Foundation">
+    <title>Graphic Design for Beginners</title>
+    <code>GD101</code>
+    <description>Learn the foundational principles of graphic design including layout, typography, color theory, and visual hierarchy. Work with industry tools to create logos, social media graphics, and print-ready materials.</description>
+    <duration>10 Hours</duration>
+    <instructor>Ms. Anya Kowalski</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">What is Graphic Design?</lesson>
+        <lesson number="02">Design Principles: Balance, Contrast, Alignment</lesson>
+        <lesson number="03">Typography Basics and Font Pairing</lesson>
+        <lesson number="04">Color Theory and Palettes</lesson>
+        <lesson number="05">Working with Images and Illustrations</lesson>
+        <lesson number="06">Introduction to Adobe Illustrator</lesson>
+        <lesson number="07">Introduction to Adobe Photoshop</lesson>
+        <lesson number="08">Designing for Social Media</lesson>
+        <lesson number="09">Print Design and File Preparation</lesson>
+        <lesson number="10">Final Project: Design a Brand Identity Package</lesson>
+    </lessons>
+    <objectives>
+        <objective>Apply core design principles to create visually balanced layouts</objective>
+        <objective>Select and pair fonts effectively for readability and style</objective>
+        <objective>Use color intentionally to communicate mood and brand</objective>
+        <objective>Produce print and digital design assets using industry tools</objective>
+    </objectives>
+</course>
+
+<course id="C016" category="Business" level="Intermediate">
+    <title>Project Management Fundamentals</title>
+    <code>PM201</code>
+    <description>Develop the skills to plan, execute, and close projects successfully. This course covers traditional and agile methodologies, risk management, stakeholder communication, and the use of project management tools.</description>
+    <duration>11 Hours</duration>
+    <instructor>Mr. Thomas Andersen</instructor>
+    <certificate>Yes</certificate>
+    <totalLessons>10</totalLessons>
+    <lessons>
+        <lesson number="01">Introduction to Project Management</lesson>
+        <lesson number="02">Project Initiation and Defining Scope</lesson>
+        <lesson number="03">Work Breakdown Structure and Scheduling</lesson>
+        <lesson number="04">Resource Planning and Budgeting</lesson>
+        <lesson number="05">Risk Identification and Management</lesson>
+        <lesson number="06">Stakeholder Communication Strategies</lesson>
+        <lesson number="07">Introduction to Agile and Scrum</lesson>
+        <lesson number="08">Monitoring Progress and KPIs</lesson>
+        <lesson number="09">Project Closure and Lessons Learned</lesson>
+        <lesson number="10">Capstone: Manage a Simulated Project End-to-End</lesson>
+    </lessons>
+    <objectives>
+        <objective>Define project scope, goals, and deliverables clearly</objective>
+        <objective>Build and manage a realistic project schedule and budget</objective>
+        <objective>Identify, assess, and mitigate project risks</objective>
+        <objective>Apply agile practices to iterative project delivery</objective>
+    </objectives>
+</course>
 
 </courses>
