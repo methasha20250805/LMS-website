@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Online Learning Platform - Course Data -->
+<!-- Well-formed XML file for course content display -->
+<courses>
+
+    <course id="C001" category="Technology" level="Foundation">
+        <title>Introduction to Web Development</title>
+        <code>WD101</code>
+        <description>Learn the fundamentals of building websites using HTML, CSS, and basic JavaScript. This course is designed for complete beginners who want to start their journey in web development.</description>
+        <duration>8 Hours</duration>
+        <instructor>Dr. Sarah Mitchell</instructor>
+        <certificate>Yes</certificate>
+        <totalLessons>10</totalLessons>
+        <lessons>
+            <lesson number="01">Introduction to HTML Structure</lesson>
+            <lesson number="02">Working with HTML Elements</lesson>
+            <lesson number="03">CSS Fundamentals and Selectors</lesson>
+            <lesson number="04">Box Model and Layouts</lesson>
+            <lesson number="05">Introduction to JavaScript</lesson>
+            <lesson number="06">DOM Manipulation</lesson>
+            <lesson number="07">Responsive Design Basics</lesson>
+            <lesson number="08">Forms and User Input</lesson>
+            <lesson number="09">Introduction to Version Control</lesson>
+            <lesson number="10">Final Project: Build a Personal Page</lesson>
+        </lessons>
+        <objectives>
+            <objective>Understand the structure of an HTML document</objective>
+            <objective>Apply CSS styling to web elements</objective>
+            <objective>Write basic JavaScript for interactivity</objective>
+            <objective>Create a simple responsive webpage</objective>
+        </objectives>
+    </course>
+
+    <course id="C002" category="Technology" level="Undergraduate">
+        <title>Advanced JavaScript and ES6+</title>
+        <code>JS301</code>
+        <description>Dive deep into modern JavaScript. Covers ES6+ features, asynchronous programming, promises, async/await, modules, and best practices for writing clean, maintainable code.</description>
+        <duration>12 Hours</duration>
+        <instructor>Prof. James Carter</instructor>
+        <certificate>Yes</certificate>
+        <totalLessons>14</totalLessons>
+        <lessons>
+            <lesson number="01">ES6 Variables: let, const, and scope</lesson>
+            <lesson number="02">Arrow Functions and Template Literals</lesson>
+            <lesson number="03">Destructuring and Spread Operators</lesson>
+            <lesson number="04">Promises and Asynchronous JavaScript</lesson>
+            <lesson number="05">Async/Await in Depth</lesson>
+            <lesson number="06">JavaScript Modules</lesson>
+            <lesson number="07">Array and Object Methods</lesson>
+            <lesson number="08">Error Handling Techniques</lesson>
+            <lesson number="09">Fetch API and REST Integration</lesson>
+            <lesson number="10">Introduction to Functional Programming</lesson>
+            <lesson number="11">Closures and Higher Order Functions</lesson>
+            <lesson number="12">Event Loop and Concurrency</lesson>
+            <lesson number="13">Testing with Jest</lesson>
+            <lesson number="14">Capstone: Build an API-Driven App</lesson>
+        </lessons>
+        <objectives>
+            <objective>Write clean code using ES6+ features</objective>
+            <objective>Manage asynchronous operations effectively</objective>
+            <objective>Use JavaScript modules for code organisation</objective>
+            <objective>Integrate external APIs using Fetch</objective>
+        </objectives>
+    </course>
+
+    <course id="C003" category="Design" level="Foundation">
+        <title>UI/UX Design Principles</title>
+        <code>UX201</code>
+        <description>Explore the core principles of user interface and user experience design. Learn about wireframing, prototyping, accessibility, colour theory, and how to create designs that users love.</description>
+        <duration>10 Hours</duration>
+        <instructor>Ms. Priya Sharma</instructor>
+        <certificate>Yes</certificate>
+        <totalLessons>12</totalLessons>
+        <lessons>
+            <lesson number="01">Introduction to UX Design</lesson>
+            <lesson number="02">Understanding User Research</lesson>
+            <lesson number="03">Information Architecture</lesson>
+            <lesson number="04">Wireframing Techniques</lesson>
+            <lesson number="05">Prototyping with Figma</lesson>
+            <lesson number="06">Colour Theory and Typography</lesson>
+            <lesson number="07">Accessibility in Design</lesson>
+            <lesson number="08">Mobile-First Design</lesson>
+            <lesson number="09">Usability Testing</lesson>
+            <lesson number="10">Design Systems</lesson>
+            <lesson number="11">Interaction Design</lesson>
+            <lesson number="12">Portfolio Project</lesson>
+        </lessons>
+        <objectives>
+            <objective>Apply UX research methods to design decisions</objective>
+            <objective>Create wireframes and interactive prototypes</objective>
+            <objective>Design accessible and inclusive interfaces</objective>
+            <objective>Develop a design system for consistency</objective>
+        </objectives>
+    </course>
+
+    <course id="C004" category="Business" level="Postgraduate">
+        <title>Digital Marketing Strategy</title>
+        <code>DM401</code>
+        <description>A comprehensive course covering SEO, social media marketing, email campaigns, analytics, and paid advertising. Ideal for marketing professionals seeking to level up in the digital space.</description>
+        <duration>15 Hours</duration>
+        <instructor>Dr. Leo Fontaine</instructor>
+        <certificate>Yes</certificate>
+        <totalLessons>16</totalLessons>
+        <lessons>
+            <lesson number="01">Foundations of Digital Marketing</lesson>
+            <lesson number="02">Search Engine Optimisation (SEO)</lesson>
+            <lesson number="03">Content Marketing Strategy</lesson>
+            <lesson number="04">Social Media Platforms Overview</lesson>
+            <lesson number="05">Paid Advertising: Google Ads</lesson>
+            <lesson number="06">Social Media Advertising</lesson>
+            <lesson number="07">Email Marketing Campaigns</lesson>
+            <lesson number="08">Marketing Automation</lesson>
+            <lesson number="09">Google Analytics Fundamentals</lesson>
+            <lesson number="10">Customer Journey Mapping</lesson>
+            <lesson number="11">Conversion Rate Optimisation</lesson>
+            <lesson number="12">Influencer Marketing</lesson>
+            <lesson number="13">Brand Identity and Positioning</lesson>
+            <lesson number="14">Data-Driven Decision Making</lesson>
+            <lesson number="15">Campaign Reporting</lesson>
+            <lesson number="16">Final Strategy Presentation</lesson>
+        </lessons>
+        <objectives>
+            <objective>Build a full digital marketing strategy</objective>
+            <objective>Run and optimise paid ad campaigns</objective>
+            <objective>Measure performance using analytics tools</objective>
+            <objective>Develop engaging content across channels</objective>
+        </objectives>
+    </course>
+
+    <course id="C005" category="Technology" level="Undergraduate">
+        <title>Python for Data Science</title>
+        <code>DS201</code>
+        <description>Learn Python programming with a focus on data analysis. Covers NumPy, Pandas, Matplotlib, and an introduction to machine learning using scikit-learn. No prior programming experience needed.</description>
+        <duration>14 Hours</duration>
+        <instructor>Prof. Anita Verma</instructor>
+        <certificate>Yes</certificate>
+        <totalLessons>13</totalLessons>
+        <lessons>
+            <lesson number="01">Python Basics and Environment Setup</lesson>
+            <lesson number="02">Data Types and Control Structures</lesson>
+            <lesson number="03">Functions and Modules</lesson>
+            <lesson number="04">NumPy Arrays and Operations</lesson>
+            <lesson number="05">Pandas DataFrames</lesson>
+            <lesson number="06">Data Cleaning Techniques</lesson>
+            <lesson number="07">Data Visualisation with Matplotlib</lesson>
+            <lesson number="08">Statistical Analysis with Python</lesson>
+            <lesson number="09">Introduction to Machine Learning</lesson>
+            <lesson number="10">Supervised Learning: Regression</lesson>
+            <lesson number="11">Supervised Learning: Classification</lesson>
+            <lesson number="12">Model Evaluation and Tuning</lesson>
+            <lesson number="13">Capstone: Data Analysis Project</lesson>
+        </lessons>
+        <objectives>
+            <objective>Write Python scripts for data processing</objective>
+            <objective>Analyse and clean datasets with Pandas</objective>
+            <objective>Visualise data insights effectively</objective>
+            <objective>Build and evaluate basic ML models</objective>
+        </objectives>
+    </course>
+
+    <course id="C006" category="Business" level="Foundation">
+        <title>Project Management Essentials</title>
+        <code>PM101</code>
+        <description>Master the fundamentals of project management, including planning, scheduling, risk management, and team collaboration. Aligned with PMI and PRINCE2 frameworks.</description>
+        <duration>6 Hours</duration>
+        <instructor>Mr. Daniel Owusu</instructor>
+        <certificate>Yes</certificate>
+        <totalLessons>8</totalLessons>
+        <lessons>
+            <lesson number="01">What is Project Management?</lesson>
+            <lesson number="02">Project Life Cycles</lesson>
+            <lesson number="03">Scope, Time, and Cost</lesson>
+            <lesson number="04">Risk Identification and Mitigation</lesson>
+            <lesson number="05">Team Communication Strategies</lesson>
+            <lesson number="06">Agile vs Waterfall Methodologies</lesson>
+            <lesson number="07">Using Project Management Tools</lesson>
+            <lesson number="08">Closing a Project Successfully</lesson>
+        </lessons>
+        <objectives>
+            <objective>Plan and scope a project from start to finish</objective>
+            <objective>Identify and manage project risks</objective>
+            <objective>Use Agile and Waterfall frameworks appropriately</objective>
+            <objective>Communicate effectively within project teams</objective>
+        </objectives>
+    </course>
+
+</courses>

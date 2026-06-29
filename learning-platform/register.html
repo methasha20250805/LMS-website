@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create your free LearnHub account and start learning today. Gain access to expert-led courses in Technology, Design, and Business." />
+    <title>Student Registration | LearnHub</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* Page-specific styles for register.html */
+        .registration-page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .registration-page-header h1 {
+            color: var(--white);
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            margin-bottom: 6px;
+        }
+
+        .registration-page-header p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.9rem;
+        }
+
+        .reg-header-divider {
+            width: 40px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+            margin: 14px auto 0;
+        }
+
+        .form-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin: 28px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--mid-grey);
+        }
+
+        .form-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Password strength indicator */
+        .password-strength {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .password-strength__bar {
+            flex: 1;
+            height: 3px;
+            background: var(--mid-grey);
+            border-radius: 2px;
+            transition: background-color 0.3s;
+        }
+
+        .password-strength__bar.weak   { background-color: var(--error); }
+        .password-strength__bar.medium { background-color: #f39c12; }
+        .password-strength__bar.strong { background-color: var(--success); }
+
+        .password-strength__label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Terms note */
+        .terms-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+
+        .terms-note a {
+            color: var(--navy);
+            text-decoration: underline;
+        }
+
+        /* Login link */
+        .login-link {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: var(--navy);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* Benefit divider */
+        .benefit-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 16px 0;
+        }
+
+        /* Trust badges */
+        .trust-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .trust-badge__icon {
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar__inner">
+                <a href="index.html" class="navbar__brand" aria-label="LearnHub Home">
+                    <div class="navbar__logo-mark" aria-hidden="true">LH</div>
+                    <span class="navbar__brand-name">Learn<span>Hub</span></span>
+                </a>
+
+                <ul class="navbar__nav" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="register.html" class="nav-cta active" aria-current="page">Register</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <button class="navbar__hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <div class="registration-page-header">
+        <h1>Student Registration</h1>
+        <p>Create your free account and start learning today</p>
+        <div class="reg-header-divider" aria-hidden="true"></div>
+    </div>
+
+    <main id="main-content">
+        <div class="container">
+            <div class="registration-layout">
+
+                <!-- ===== REGISTRATION FORM ===== -->
+                <div class="registration-form-card">
+                    <form id="registration-form" novalidate aria-label="Student registration form">
+                        <!-- novalidate disables HTML5 browser validation; JS handles it instead -->
+
+                        <!-- Personal Information -->
+                        <h2 class="form-section-title">Personal Information</h2>
+
+                        <!-- Row 1: Full Name + Email -->
+                        <div class="form-row">
+
+                            <!-- Field 1: Full Name (text) - Required Field 1 for JS validation -->
+                            <div class="form-group">
+                                <label for="full-name" class="form-label">
+                                    Full Name <span class="required" aria-label="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="full-name"
+                                    name="full_name"
+                                    class="form-input"
+                                    placeholder="Enter your full name"
+                                    aria-required="true"
+                                    aria-describedby="full-name-error"
+                                    autocomplete="name"
+                                />
+                                <div class="form-error" id="full-name-error" role="alert" aria-live="assertive"></div>
+                            </div>
+
+                            <!-- Field 2: Email Address (email type) - Required Field 2 for JS validation -->
+                            <div class="form-group">
+                                <label for="email-address" class="form-label">
+                                    Email Address <span class="required" aria-label="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="email-address"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="Enter your email address"
+                                    aria-required="true"
+                                    aria-describedby="email-error"
+                                    autocomplete="email"
+                                />
+                                <!-- Note: type="text" used to disable HTML5 email validation per brief -->
+                                <div class="form-error" id="email-error" role="alert" aria-live="assertive"></div>
+                            </div>
+
+                        </div>
+
+                        <!-- Row 2: Phone + Course Select -->
+                        <div class="form-row">
+
+                            <!-- Field 3: Phone Number (text) -->
+                            <div class="form-group">
+                                <label for="phone-number" class="form-label">Phone Number</label>
+                                <input
+                                    type="text"
+                                    id="phone-number"
+                                    name="phone"
+                                    class="form-input"
+                                    placeholder="e.g. +44 7700 900000"
+                                    aria-describedby="phone-error"
+                                    autocomplete="tel"
+                                />
+                                <div class="form-error" id="phone-error" role="alert" aria-live="assertive"></div>
+                            </div>
+
+                            <!-- Field 4: Course Selection (select dropdown) - populated from XML -->
+                            <div class="form-group">
+                                <label for="select-course" class="form-label">
+                                    Select Course <span class="required" aria-label="required">*</span>
+                                </label>
+                                <select
+                                    id="select-course"
+                                    name="course"
+                                    class="form-select"
+                                    aria-required="true"
+                                    aria-describedby="course-error"
+                                >
+                                    <option value="">-- Choose a course --</option>
+                                    <!-- Populated dynamically from courses.xml via JS -->
+                                </select>
+                                <div class="form-error" id="course-error" role="alert" aria-live="assertive"></div>
+                            </div>
+
+                        </div>
+
+                        <!-- Account Security -->
+                        <h2 class="form-section-title">Account Security</h2>
+
+                        <!-- Row 3: Password + Confirm Password -->
+                        <div class="form-row">
+
+                            <!-- Field 5: Password - Required Field 3 for JS validation -->
+                            <div class="form-group">
+                                <label for="password" class="form-label">
+                                    Password <span class="required" aria-label="required">*</span>
+                                </label>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    class="form-input"
+                                    placeholder="Create a strong password"
+                                    aria-required="true"
+                                    aria-describedby="password-error password-hint"
+                                    autocomplete="new-password"
+                                />
+                                <!-- Password strength bars (visual only, JS-driven) -->
+                                <div class="password-strength" aria-hidden="true" id="strength-bars">
+                                    <div class="password-strength__bar" id="strength-bar-1"></div>
+                                    <div class="password-strength__bar" id="strength-bar-2"></div>
+                                    <div class="password-strength__bar" id="strength-bar-3"></div>
+                                </div>
+                                <span class="password-strength__label" id="password-hint">
+                                    Min. 8 characters, 1 uppercase, 1 lowercase, 1 number
+                                </span>
+                                <div class="form-error" id="password-error" role="alert" aria-live="assertive"></div>
+                            </div>
+
+                            <!-- Field 6: Confirm Password -->
+                            <div class="form-group">
+                                <label for="confirm-password" class="form-label">
+                                    Confirm Password <span class="required" aria-label="required">*</span>
+                                </label>
+                                <input
+                                    type="password"
+                                    id="confirm-password"
+                                    name="confirm_password"
+                                    class="form-input"
+                                    placeholder="Repeat your password"
+                                    aria-required="true"
+                                    aria-describedby="confirm-password-error"
+                                    autocomplete="new-password"
+                                />
+                                <div class="form-error" id="confirm-password-error" role="alert" aria-live="assertive"></div>
+                            </div>
+
+                        </div>
+
+                        <!-- Preferences & Agreement -->
+                        <h2 class="form-section-title">Preferences &amp; Agreement</h2>
+
+                        <!-- Field 7: Learning Goals (radio buttons) -->
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="form-label">Primary Learning Goal</legend>
+                                <div class="radio-group" role="radiogroup" aria-label="Select your primary learning goal">
+                                    <label class="radio-label">
+                                        <input type="radio" name="learning_goal" value="career" />
+                                        Career development and job skills
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="learning_goal" value="personal" />
+                                        Personal interest and growth
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="learning_goal" value="academic" />
+                                        Academic study support
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- Field 8: Notifications (checkboxes) -->
+                        <div class="form-group">
+                            <fieldset>
+                                <legend class="form-label">Email Notifications</legend>
+                                <div class="check-group" role="group" aria-label="Select email notification preferences">
+                                    <label class="check-label">
+                                        <input type="checkbox" name="notify_new_courses" value="yes" />
+                                        Notify me about new courses and updates
+                                    </label>
+                                    <label class="check-label">
+                                        <input type="checkbox" name="notify_progress" value="yes" />
+                                        Send weekly progress summaries
+                                    </label>
+                                    <label class="check-label">
+                                        <input type="checkbox" name="notify_offers" value="yes" />
+                                        Receive special offers and promotions
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- Terms & Conditions checkbox -->
+                        <div class="form-group">
+                            <label class="check-label" style="align-items:flex-start;">
+                                <input
+                                    type="checkbox"
+                                    id="terms-check"
+                                    name="terms"
+                                    aria-required="true"
+                                    aria-describedby="terms-error"
+                                    style="margin-top:3px;"
+                                />
+                                <span>
+                                    I agree to the <a href="#" aria-label="View Terms and Conditions">Terms and Conditions</a>
+                                    and <a href="#" aria-label="View Privacy Policy">Privacy Policy</a>
+                                    <span class="required" aria-label="required"> *</span>
+                                </span>
+                            </label>
+                            <div class="form-error" id="terms-error" role="alert" aria-live="assertive"></div>
+                            <p class="terms-note" id="terms-note">
+                                By registering, you confirm you are 18+ years old and agree to our
+                                <a href="#">Terms of Service</a>.
+                            </p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button
+                            type="submit"
+                            id="register-btn"
+                            class="btn btn--primary btn--full"
+                            aria-label="Submit registration form"
+                        >
+                            Create My Account
+                        </button>
+
+                        <!-- Success Message (hidden until form submits successfully) -->
+                        <div
+                            class="form-success-msg"
+                            id="form-success-msg"
+                            role="status"
+                            aria-live="polite"
+                            tabindex="-1"
+                        ></div>
+
+                    </form>
+
+                    <!-- Login link -->
+                    <p class="login-link">
+                        Already have an account? <a href="#" aria-label="Sign in to your existing LearnHub account">Sign in here</a>
+                    </p>
+                </div>
+
+                <!-- ===== REGISTRATION BENEFITS SIDEBAR ===== -->
+                <aside class="registration-benefits" aria-label="Benefits of registering with LearnHub" role="complementary">
+                    <h2 style="color:var(--gold); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-bottom:20px;">
+                        Registration Benefits
+                    </h2>
+
+                    <div class="benefit-item">
+                        <div class="benefit-item__icon" aria-hidden="true">📚</div>
+                        <span>Access to 100+ premium courses across Technology, Design, and Business</span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-item__icon" aria-hidden="true">🎮</div>
+                        <span>Interactive learning resources including videos, quizzes, and exercises</span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-item__icon" aria-hidden="true">🏆</div>
+                        <span>Industry-recognised certificates upon successful course completion</span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-item__icon" aria-hidden="true">💬</div>
+                        <span>24/7 expert instructor support and community access</span>
+                    </div>
+
+                    <div class="benefit-divider" aria-hidden="true"></div>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-badges" aria-label="Trust and security information">
+                        <div class="trust-badge">
+                            <span class="trust-badge__icon" aria-hidden="true">🔒</span>
+                            <span>Secure registration</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="trust-badge__icon" aria-hidden="true">✅</span>
+                            <span>Free to join</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="trust-badge__icon" aria-hidden="true">🚀</span>
+                            <span>Start instantly</span>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__inner">
+                <div>
+                    <div class="footer__brand-name">
+                        <span class="logo-mark" aria-hidden="true">LH</span>
+                        LearnHub
+                    </div>
+                    <p class="footer__tagline">Flexible, expert-led online courses in Technology, Design &amp; Business.</p>
+                    <nav class="footer__social" aria-label="Social media links">
+                        <a href="#" aria-label="LearnHub on Facebook">f</a>
+                        <a href="#" aria-label="LearnHub on Twitter">t</a>
+                        <a href="#" aria-label="LearnHub on LinkedIn">in</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <div class="footer__heading">Legal</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer__heading">Navigate</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 LearnHub Online Learning Platform. All rights reserved.</p>
+                <nav class="footer__legal" aria-label="Legal navigation">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+
+    <!-- Password strength meter script (page-specific, inline) -->
+    <script>
+        /**
+         * Password strength indicator for the registration page.
+         * Evaluates password strength and updates visual bars.
+         */
+        (function () {
+            const passwordInput = document.getElementById('password');
+            const bar1 = document.getElementById('strength-bar-1');
+            const bar2 = document.getElementById('strength-bar-2');
+            const bar3 = document.getElementById('strength-bar-3');
+            const hint = document.getElementById('password-hint');
+
+            if (!passwordInput || !bar1) return;
+
+            /**
+             * Calculates a simple strength score (0-3) for a password.
+             * @param {string} val - The password string
+             * @returns {number} Strength score: 0=empty, 1=weak, 2=medium, 3=strong
+             */
+            function getStrength(val) {
+                if (!val || val.length === 0) return 0;
+                let score = 0;
+                if (val.length >= 8)            score++;
+                if (/[A-Z]/.test(val) && /[a-z]/.test(val)) score++;
+                if (/[0-9]/.test(val))          score++;
+                return score;
+            }
+
+            passwordInput.addEventListener('input', function () {
+                const score = getStrength(this.value);
+
+                // Reset all bars
+                [bar1, bar2, bar3].forEach(function (b) {
+                    b.className = 'password-strength__bar';
+                });
+
+                // Apply colour class based on score
+                if (score === 1) {
+                    bar1.classList.add('weak');
+                    if (hint) hint.textContent = 'Weak – add uppercase letters and numbers';
+                } else if (score === 2) {
+                    bar1.classList.add('medium');
+                    bar2.classList.add('medium');
+                    if (hint) hint.textContent = 'Medium – add a number or special character';
+                } else if (score === 3) {
+                    bar1.classList.add('strong');
+                    bar2.classList.add('strong');
+                    bar3.classList.add('strong');
+                    if (hint) hint.textContent = 'Strong password ✓';
+                } else {
+                    if (hint) hint.textContent = 'Min. 8 characters, 1 uppercase, 1 lowercase, 1 number';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

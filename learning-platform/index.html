@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LearnHub - An online learning platform offering flexible, expert-led courses in Technology, Design, and Business." />
+    <title>LearnHub | Learn New Skills Anytime, Anywhere</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar__inner">
+                <!-- Logo / Brand -->
+                <a href="index.html" class="navbar__brand" aria-label="LearnHub Home">
+                    <div class="navbar__logo-mark" aria-hidden="true">LH</div>
+                    <span class="navbar__brand-name">Learn<span>Hub</span></span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <ul class="navbar__nav" role="list">
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <!-- Mobile Hamburger -->
+                <button class="navbar__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <span class="hero__eyebrow">Online Learning Platform</span>
+                <h1 class="hero__title" id="hero-heading">
+                    Learn New Skills<br /><span>Anytime, Anywhere</span>
+                </h1>
+                <p class="hero__subtitle">
+                    Flexible, expert-led courses in Technology, Design, and Business.
+                    Study at your own pace and earn industry-recognised certificates.
+                </p>
+                <div class="hero__actions">
+                    <a href="courses.html" class="btn btn--primary">Browse Courses</a>
+                    <a href="register.html" class="btn btn--outline">Create Free Account</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED COURSES ===== -->
+        <section class="section" aria-labelledby="featured-heading">
+            <div class="container">
+                <div class="section-header" style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+                    <div>
+                        <span class="section-header__eyebrow">Handpicked for You</span>
+                        <h2 class="section-header__title" id="featured-heading">Featured Courses</h2>
+                        <p class="section-header__subtitle">Our most popular courses, chosen by thousands of learners this month.</p>
+                    </div>
+                    <a href="courses.html" class="btn btn--dark btn--sm" style="margin-top:28px;">View All Courses</a>
+                </div>
+
+                <!-- Course cards injected by JS from XML -->
+                <div class="courses-grid" id="featured-courses-grid" role="list" aria-live="polite" aria-label="Featured course list">
+                    <!-- Loaded dynamically from courses.xml via main.js -->
+                    <div class="no-results" style="grid-column:1/-1;">
+                        <p class="text-muted">Loading courses&hellip;</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURES STRIP ===== -->
+        <section class="features-strip" aria-labelledby="features-heading">
+            <div class="container">
+                <h2 class="text-center text-navy" id="features-heading" style="margin-bottom:40px; font-size:1.1rem; letter-spacing:0.02em; font-weight:700;">Why Learners Choose LearnHub</h2>
+                <div class="features-grid" role="list">
+
+                    <div class="feature-item" role="listitem">
+                        <div class="feature-item__icon" aria-hidden="true">🕐</div>
+                        <div class="feature-item__title">Flexible Learning</div>
+                        <p class="feature-item__desc">Study any time, on any device. Pause, rewind, and resume at your own pace.</p>
+                    </div>
+
+                    <div class="feature-item" role="listitem">
+                        <div class="feature-item__icon" aria-hidden="true">🎓</div>
+                        <div class="feature-item__title">Expert Instructors</div>
+                        <p class="feature-item__desc">Learn from industry professionals with years of hands-on experience.</p>
+                    </div>
+
+                    <div class="feature-item" role="listitem">
+                        <div class="feature-item__icon" aria-hidden="true">📜</div>
+                        <div class="feature-item__title">Certificates</div>
+                        <p class="feature-item__desc">Earn industry-recognised certificates to boost your career profile.</p>
+                    </div>
+
+                    <div class="feature-item" role="listitem">
+                        <div class="feature-item__icon" aria-hidden="true">🚀</div>
+                        <div class="feature-item__title">Self-Paced Learning</div>
+                        <p class="feature-item__desc">No deadlines, no pressure. Complete courses on a schedule that suits you.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <section class="section" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="section-header text-center" style="max-width:640px; margin:0 auto 40px;">
+                    <span class="section-header__eyebrow">About LearnHub</span>
+                    <h2 class="section-header__title" id="about-heading">Empowering Learners Worldwide</h2>
+                    <p class="section-header__subtitle">
+                        LearnHub is a mini Learning Management System (LMS) dedicated to making quality education
+                        accessible to everyone. We partner with expert instructors to bring you practical,
+                        up-to-date courses across Technology, Design, and Business.
+                    </p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid" role="list">
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-card__num">6+</div>
+                        <div class="stat-card__label">Available Courses</div>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-card__num">100%</div>
+                        <div class="stat-card__label">Online & Flexible</div>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-card__num">6</div>
+                        <div class="stat-card__label">Expert Instructors</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT SECTION ===== -->
+        <section class="section section--alt" id="contact" aria-labelledby="contact-heading">
+            <div class="container text-center" style="max-width:540px;">
+                <span class="section-header__eyebrow">Get in Touch</span>
+                <h2 class="section-header__title" id="contact-heading" style="color:var(--navy); margin-bottom:14px;">Have Questions?</h2>
+                <p style="margin-bottom:28px;">
+                    Our support team is ready to help you find the right course, sort out enrolment,
+                    or answer any questions about our platform.
+                </p>
+                <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+                    <a href="mailto:support@learnhub.example.com" class="btn btn--dark" aria-label="Email LearnHub support team">
+                        ✉ Email Support
+                    </a>
+                    <a href="register.html" class="btn btn--primary" aria-label="Register for a free LearnHub account">
+                        Get Started Free
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__inner">
+
+                <!-- Brand -->
+                <div>
+                    <div class="footer__brand-name">
+                        <span class="logo-mark" aria-hidden="true">LH</span>
+                        LearnHub
+                    </div>
+                    <p class="footer__tagline">Flexible, expert-led online courses in Technology, Design &amp; Business. Learn at your own pace, earn real certificates.</p>
+                    <nav class="footer__social" aria-label="Social media links">
+                        <a href="#" aria-label="LearnHub on Facebook">f</a>
+                        <a href="#" aria-label="LearnHub on Twitter">t</a>
+                        <a href="#" aria-label="LearnHub on LinkedIn">in</a>
+                    </nav>
+                </div>
+
+                <!-- Legal Links -->
+                <div>
+                    <div class="footer__heading">Legal</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <div class="footer__heading">Quick Links</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 LearnHub Online Learning Platform. All rights reserved.</p>
+                <nav class="footer__legal" aria-label="Legal navigation">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>

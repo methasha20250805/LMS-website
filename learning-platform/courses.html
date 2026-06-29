@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse all available courses on LearnHub. Filter by level and category to find the perfect course for you." />
+    <title>All Courses | LearnHub</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* Page-specific styles for courses.html */
+        .courses-page-header {
+            background: var(--navy);
+            padding: 48px 0 40px;
+        }
+
+        .courses-page-header h1 {
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .courses-page-header p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.95rem;
+        }
+
+        .courses-page-header .header-divider {
+            width: 48px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 16px 0 0;
+            border-radius: 2px;
+        }
+
+        .results-count {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .filter-bar__label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar__inner">
+                <a href="index.html" class="navbar__brand" aria-label="LearnHub Home">
+                    <div class="navbar__logo-mark" aria-hidden="true">LH</div>
+                    <span class="navbar__brand-name">Learn<span>Hub</span></span>
+                </a>
+
+                <ul class="navbar__nav" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html" class="active" aria-current="page">Courses</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <button class="navbar__hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ===== PAGE HEADER ===== -->
+        <section class="courses-page-header" aria-labelledby="courses-heading">
+            <div class="container">
+                <h1 id="courses-heading">Available Courses</h1>
+                <p>Explore our full catalogue of expert-led online courses.</p>
+                <div class="header-divider" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- ===== COURSES SECTION ===== -->
+        <section class="section" aria-labelledby="courses-heading">
+            <div class="container">
+
+                <!-- Search & Filter Bar -->
+                <div class="filter-bar" role="search" aria-label="Course search and filters">
+                    <!-- Search Input -->
+                    <div class="filter-bar__search">
+                        <span class="filter-bar__search-icon" aria-hidden="true">🔍</span>
+                        <label for="course-search" class="sr-only">Search courses</label>
+                        <input
+                            type="text"
+                            id="course-search"
+                            placeholder="Search for courses, topics, or instructors..."
+                            aria-label="Search courses by keyword"
+                            autocomplete="off"
+                        />
+                    </div>
+
+                    <!-- Level Filter - 3 options + All (meets >2 options requirement) -->
+                    <div>
+                        <label for="level-filter" class="filter-bar__label">Level</label>
+                        <select id="level-filter" class="filter-bar__select" aria-label="Filter courses by level">
+                            <option value="all">All Levels</option>
+                            <option value="Foundation">Foundation</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Postgraduate">Postgraduate</option>
+                        </select>
+                    </div>
+
+                    <!-- Category Filter - 3 options + All (meets >2 options requirement) -->
+                    <div>
+                        <label for="category-filter" class="filter-bar__label">Category</label>
+                        <select id="category-filter" class="filter-bar__select" aria-label="Filter courses by category">
+                            <option value="all">All Categories</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Design">Design</option>
+                            <option value="Business">Business</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Screen-reader only helper -->
+                <p class="sr-only" role="status" id="results-status" aria-live="polite"></p>
+
+                <!-- Course Cards Grid (populated from XML via JS) -->
+                <div
+                    class="courses-grid"
+                    id="all-courses-grid"
+                    role="list"
+                    aria-live="polite"
+                    aria-label="Course listing"
+                >
+                    <div style="grid-column:1/-1; padding:60px; text-align:center;">
+                        <p class="text-muted">Loading courses&hellip;</p>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="pagination" aria-label="Course page navigation">
+                    <button class="pagination__btn" aria-label="Previous page" title="Previous page">&lsaquo;</button>
+                    <button class="pagination__btn active" aria-current="page" aria-label="Page 1">1</button>
+                    <button class="pagination__btn" aria-label="Page 2">2</button>
+                    <button class="pagination__btn" aria-label="Page 3">3</button>
+                    <span class="pagination__ellipsis" aria-hidden="true">&hellip;</span>
+                    <button class="pagination__btn" aria-label="Page 10">10</button>
+                    <button class="pagination__btn" aria-label="Next page" title="Next page">&rsaquo;</button>
+                </nav>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__inner">
+                <div>
+                    <div class="footer__brand-name">
+                        <span class="logo-mark" aria-hidden="true">LH</span>
+                        LearnHub
+                    </div>
+                    <p class="footer__tagline">Flexible, expert-led online courses in Technology, Design &amp; Business.</p>
+                    <nav class="footer__social" aria-label="Social media links">
+                        <a href="#" aria-label="LearnHub on Facebook">f</a>
+                        <a href="#" aria-label="LearnHub on Twitter">t</a>
+                        <a href="#" aria-label="LearnHub on LinkedIn">in</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <div class="footer__heading">Legal</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer__heading">Quick Links</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 LearnHub Online Learning Platform. All rights reserved.</p>
+                <nav class="footer__legal" aria-label="Legal navigation">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Visually hidden utility class for screen readers -->
+    <style>.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }</style>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>

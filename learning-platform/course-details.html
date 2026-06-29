@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View full course details, lesson plan, and instructor information on LearnHub." />
+    <title>Course Details | LearnHub</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* Page-specific styles for course-details.html */
+        .course-detail__title {
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .course-detail__code {
+            display: inline-block;
+            background: var(--off-white);
+            border: 1px solid var(--mid-grey);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .related-courses-heading {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin: 24px 0 12px;
+        }
+
+        .enroll-divider {
+            border: none;
+            border-top: 1px solid var(--mid-grey);
+            margin: 16px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar__inner">
+                <a href="index.html" class="navbar__brand" aria-label="LearnHub Home">
+                    <div class="navbar__logo-mark" aria-hidden="true">LH</div>
+                    <span class="navbar__brand-name">Learn<span>Hub</span></span>
+                </a>
+
+                <ul class="navbar__nav" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="register.html" class="nav-cta">Register</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <button class="navbar__hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <nav class="breadcrumb" aria-label="Breadcrumb navigation">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb__sep" aria-hidden="true">›</li>
+            <li class="breadcrumb__item"><a href="courses.html">Courses</a></li>
+            <li class="breadcrumb__sep" aria-hidden="true">›</li>
+            <li class="breadcrumb__item active" aria-current="page" id="breadcrumb-course-title">Course Details</li>
+        </ol>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+
+            <!-- Two-column layout: Main content + Sidebar -->
+            <div class="course-detail-layout">
+
+                <!-- ===== MAIN CONTENT ===== -->
+                <article aria-labelledby="course-detail-title">
+
+                    <!-- Course Code Badge -->
+                    <div class="course-detail__code" id="detail-code">Loading...</div>
+
+                    <!-- Course Title (populated by JS) -->
+                    <h1 class="course-detail__title" id="course-detail-title">Loading course...</h1>
+
+                    <!-- Course Image -->
+                    <figure class="course-detail__main-image" role="img" aria-label="Course cover image placeholder">
+                        <figcaption style="display:none;">Course cover image</figcaption>
+                        <span aria-hidden="true" style="color:var(--text-muted); font-size:0.85rem;">Course Image Placeholder</span>
+                    </figure>
+
+                    <!-- Description -->
+                    <div class="course-detail__section">
+                        <h2>Description</h2>
+                        <p id="course-description" style="color:var(--text-dark); font-size:0.95rem; line-height:1.8;">Loading description...</p>
+                    </div>
+
+                    <!-- Learning Objectives -->
+                    <div class="course-detail__section">
+                        <h2>What You Will Learn</h2>
+                        <div class="objectives-grid" id="objectives-grid" role="list" aria-label="Learning objectives">
+                            <!-- Populated by JS from XML -->
+                        </div>
+                    </div>
+
+                    <!-- Lessons -->
+                    <div class="course-detail__section">
+                        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; padding-bottom:10px; border-bottom:2px solid var(--mid-grey);">
+                            <h2 style="border:none; padding:0; margin:0;">Lessons</h2>
+                            <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;" id="lessons-total">Total: 0 Lessons</span>
+                        </div>
+                        <div class="lessons-list" id="lessons-list" role="list" aria-label="Course lessons">
+                            <!-- Populated by JS from XML -->
+                        </div>
+                    </div>
+
+                    <!-- Instructor -->
+                    <div class="course-detail__section">
+                        <h2>Instructor</h2>
+                        <div class="instructor-card" role="region" aria-label="Instructor information">
+                            <div class="instructor-card__avatar" aria-hidden="true" id="instructor-initials">??</div>
+                            <div>
+                                <div class="instructor-card__name" id="instructor-name">Loading...</div>
+                                <p class="instructor-card__bio">Expert in field with 10+ years experience teaching global students.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- ===== SIDEBAR ===== -->
+                <aside class="course-sidebar" aria-label="Course summary and enrolment">
+
+                    <!-- Course Summary Card -->
+                    <div class="course-summary-card">
+                        <div class="course-summary-card__header">
+                            <h3>Course Summary</h3>
+                        </div>
+                        <div class="course-summary-card__body">
+
+                            <div class="summary-row">
+                                <span class="summary-row__label">Duration</span>
+                                <span class="summary-row__value" id="detail-duration">—</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="summary-row__label">Level</span>
+                                <span class="summary-row__value" id="detail-level">—</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="summary-row__label">Lessons</span>
+                                <span class="summary-row__value" id="detail-lessons">—</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="summary-row__label">Certificate</span>
+                                <span class="summary-row__value" id="detail-certificate">—</span>
+                            </div>
+
+                            <!-- Progress Bar -->
+                            <div class="progress-bar-wrap">
+                                <div class="progress-label">
+                                    <span>Your Progress</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Course progress: 0%">
+                                    <div class="progress-bar__fill" style="width:0%;"></div>
+                                </div>
+                            </div>
+
+                            <hr class="enroll-divider" aria-hidden="true" />
+
+                            <!-- Enrol Button -->
+                            <a href="register.html" class="btn btn--primary btn--full" aria-label="Enrol in this course">
+                                Enrol Now
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- Related Courses -->
+                    <div role="region" aria-label="Related courses">
+                        <div class="related-courses-heading">Related Courses</div>
+                        <div id="related-courses">
+                            <!-- Populated by JS -->
+                            <p style="font-size:0.82rem; color:var(--text-muted);">Loading related courses...</p>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__inner">
+                <div>
+                    <div class="footer__brand-name">
+                        <span class="logo-mark" aria-hidden="true">LH</span>
+                        LearnHub
+                    </div>
+                    <p class="footer__tagline">Flexible, expert-led online courses in Technology, Design &amp; Business.</p>
+                    <nav class="footer__social" aria-label="Social media links">
+                        <a href="#" aria-label="LearnHub on Facebook">f</a>
+                        <a href="#" aria-label="LearnHub on Twitter">t</a>
+                        <a href="#" aria-label="LearnHub on LinkedIn">in</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <div class="footer__heading">Legal</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="footer__heading">Navigate</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 LearnHub Online Learning Platform. All rights reserved.</p>
+                <nav class="footer__legal" aria-label="Legal navigation">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
