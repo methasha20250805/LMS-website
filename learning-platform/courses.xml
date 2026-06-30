@@ -35,6 +35,7 @@
     <course id="C002" category="Technology" level="Undergraduate">
         <title>Advanced JavaScript and ES6+</title>
         <code>JS301</code>
+        <image>JS.jpg</image>
         <description>Dive deep into modern JavaScript. Covers ES6+ features, asynchronous programming, promises, async/await, modules, and best practices for writing clean, maintainable code.</description>
         <duration>12 Hours</duration>
         <instructor>Prof. James Carter</instructor>
