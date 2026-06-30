@@ -134,6 +134,7 @@
     <course id="C005" category="Technology" level="Undergraduate">
         <title>Python for Data Science</title>
         <code>DS201</code>
+        <image>python.jpg</image>
         <description>Learn Python programming with a focus on data analysis. Covers NumPy, Pandas, Matplotlib, and an introduction to machine learning using scikit-learn. No prior programming experience needed.</description>
         <duration>14 Hours</duration>
         <instructor>Prof. Anita Verma</instructor>
