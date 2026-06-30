@@ -190,6 +190,7 @@ function parseCourseElement(courseEl) {
         level:        courseEl.getAttribute('level'),
         title:        getText('title'),
         code:         getText('code'),
+        image:        getText('image'),
         description:  getText('description'),
         duration:     getText('duration'),
         instructor:   getText('instructor'),
@@ -438,11 +439,15 @@ function buildCourseCard(course, featured) {
         ? '<span class="course-card__badge">Featured</span>'
         : '';
 
-    card.innerHTML = `
-        <div class="course-card__image">
-            <div class="course-card__image-placeholder" aria-hidden="true">Course Image</div>
-            ${badgeHTML}
-        </div>
+    const imageHTML = course.image
+    ? `<img src="${escapeHTML(course.image)}" alt="${escapeHTML(course.title)} course cover" loading="lazy" />`
+    : `<div class="course-card__image-placeholder" aria-hidden="true">Course Image</div>`;
+
+card.innerHTML = `
+    <div class="course-card__image">
+        ${imageHTML}
+        ${badgeHTML}
+    </div>
         <div class="course-card__body">
             <div class="course-card__category">${escapeHTML(course.category)} &bull; ${escapeHTML(course.level)}</div>
             <h3 class="course-card__title">${escapeHTML(course.title)}</h3>
@@ -604,9 +609,12 @@ function renderCourseDetail(course, related) {
                 a.href = 'course-details.html?id=' + encodeURIComponent(rc.id);
                 a.className = 'related-card';
                 a.setAttribute('aria-label', 'View related course: ' + rc.title);
-                a.innerHTML = `
-                    <div class="related-card__thumb" aria-hidden="true"></div>
-                    <div>
+                const thumbHTML = rc.image
+    ? `<img src="${escapeHTML(rc.image)}" alt="" style="width:100%;height:100%;object-fit:cover;" />`
+    : '';
+a.innerHTML = `
+    <div class="related-card__thumb" aria-hidden="true">${thumbHTML}</div>
+    <div>
                         <div class="related-card__title">${escapeHTML(rc.title)}</div>
                         <div class="related-card__meta">${escapeHTML(rc.duration)}</div>
                     </div>`;

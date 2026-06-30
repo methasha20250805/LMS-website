@@ -6,6 +6,7 @@
     <course id="C001" category="Technology" level="Foundation">
         <title>Introduction to Web Development</title>
         <code>WD101</code>
+        <image>web.jpg</image>
         <description>Learn the fundamentals of building websites using HTML, CSS, and basic JavaScript. This course is designed for complete beginners who want to start their journey in web development.</description>
         <duration>8 Hours</duration>
         <instructor>Dr. Sarah Mitchell</instructor>
