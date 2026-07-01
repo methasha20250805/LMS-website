@@ -192,6 +192,7 @@
     <course id="C007" category="Technology" level="Intermediate">
     <title>Python for Data Analysis</title>
     <code>DA201</code>
+    <image>python.png</image>
     <description>Master data analysis using Python with libraries like Pandas, NumPy, and Matplotlib. Learn to clean, transform, and visualize datasets to extract meaningful insights for real-world problems.</description>
     <duration>12 Hours</duration>
     <instructor>Prof. James Okafor</instructor>
@@ -220,6 +221,7 @@
 <course id="C008" category="Design" level="Foundation">
     <title>UI/UX Design Fundamentals</title>
     <code>UX101</code>
+    <image>UIUX.jpg</image>
     <description>Explore the principles of user interface and user experience design. Learn how to create intuitive, accessible, and visually appealing digital products using industry-standard tools and methodologies.</description>
     <duration>10 Hours</duration>
     <instructor>Ms. Priya Nair</instructor>
@@ -248,6 +250,7 @@
 <course id="C009" category="Business" level="Foundation">
     <title>Digital Marketing Essentials</title>
     <code>DM101</code>
+    <image>DM.jpg</image>
     <description>Gain a comprehensive understanding of digital marketing channels including SEO, social media, email marketing, and paid advertising. Build skills to grow an online presence and drive measurable results.</description>
     <duration>9 Hours</duration>
     <instructor>Dr. Lisa Fernandez</instructor>
@@ -276,6 +279,7 @@
 <course id="C010" category="Technology" level="Advanced">
     <title>Machine Learning with Python</title>
     <code>ML301</code>
+    <image>ML.jpg</image>
     <description>Dive deep into supervised and unsupervised machine learning algorithms. Learn to build, evaluate, and deploy predictive models using scikit-learn, and understand the mathematics driving modern ML systems.</description>
     <duration>16 Hours</duration>
     <instructor>Dr. Arun Krishnamurthy</instructor>
@@ -304,6 +308,7 @@
 <course id="C011" category="Personal Development" level="Foundation">
     <title>Public Speaking and Presentation Skills</title>
     <code>PS101</code>
+    <image>PS.jpg</image>
     <description>Overcome the fear of public speaking and develop confidence in delivering compelling presentations. This course covers storytelling, vocal delivery, body language, and slide design for professional and academic settings.</description>
     <duration>6 Hours</duration>
     <instructor>Ms. Claire Beaumont</instructor>
