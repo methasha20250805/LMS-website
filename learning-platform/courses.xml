@@ -337,6 +337,7 @@
 <course id="C012" category="Technology" level="Intermediate">
     <title>Cloud Computing with AWS</title>
     <code>CC201</code>
+    <image>CC.jpg</image>
     <description>Learn to architect, deploy, and manage cloud infrastructure using Amazon Web Services. Covering core services like EC2, S3, RDS, and IAM, this course prepares you for real-world cloud roles and AWS certification exams.</description>
     <duration>14 Hours</duration>
     <instructor>Mr. David Thornton</instructor>
@@ -365,6 +366,7 @@
 <course id="C013" category="Finance" level="Foundation">
     <title>Personal Finance and Investing Basics</title>
     <code>FN101</code>
+    <image>finance.jpg</image>
     <description>Take control of your financial future by learning budgeting, debt management, savings strategies, and the fundamentals of investing in stocks, bonds, and index funds. Designed for anyone starting their financial journey.</description>
     <duration>7 Hours</duration>
     <instructor>Mr. Robert Chambers</instructor>
