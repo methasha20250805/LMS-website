@@ -395,6 +395,7 @@
 <course id="C014" category="Technology" level="Foundation">
     <title>Introduction to Cybersecurity</title>
     <code>CS101</code>
+    <image>cyber.jpg</image>
     <description>Understand the fundamentals of cybersecurity, including common threats, attack vectors, and defense strategies. Ideal for beginners seeking to protect personal data or pursue a career in information security.</description>
     <duration>8 Hours</duration>
     <instructor>Dr. Yemi Adeyemi</instructor>
